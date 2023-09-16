@@ -5,10 +5,10 @@ const app = new Koa();
 const router = new Router();
 const port = 3001;
 
-async function getRes(fn){
+async function getRes(fn,ctx){
     return new Promise((resolve,reject) => {
         setTimeout(() => {
-            resolve(fn())
+            resolve(fn(ctx))
         },1000)
     })
 }
@@ -16,7 +16,7 @@ async function getRes(fn){
 mockList.forEach(item => {
     const {url,method,response} = item
     router[method](url,async ctx => {
-        const  res = await getRes(response) //模拟网络请求的加载状态
+        const  res = await getRes(response,ctx) //模拟网络请求的加载状态
         ctx.body = res
     })
 }
