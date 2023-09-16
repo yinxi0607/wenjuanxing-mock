@@ -37,14 +37,16 @@ module.exports = [
         method: 'get',
         response: (ctx) => {
             console.log(ctx.url)
-            const {url=''} = ctx
+            const {url,query}= ctx
             const isDeleted = url.indexOf('isDeleted=true') > -1
             const isStar = url.indexOf('isStar=true') > -1
+            const pageSize = parseInt(query.pageSize)||10
+
             console.log('isStar',isStar)
             return {
                 errno: 0,
                 data: {
-                    list: getQuestionList({isDeleted,isStar}),// 当前页
+                    list: getQuestionList({len:pageSize,isDeleted,isStar}),// 当前页
                     total: 100 //总数，用于分页
                 }
             }
