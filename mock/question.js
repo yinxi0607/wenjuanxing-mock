@@ -13,7 +13,40 @@ module.exports = [
                 data: {
                     id: Random.id(),
                     title: Random.ctitle(10, 20),
-                    url: Random.url()
+                    //组件列表
+                    componentList: [
+                        // Title
+                        {
+                            fe_id: Random.id(),
+                            type: 'questionTitle', // 组件类型，不能重复，前后端统一好的
+                            title: '标题',
+                            props: {
+                                text:'个人信息调研',
+                                level: 2,
+                                isCenter: false
+                            }
+                        },
+                        // Input
+                        {
+                            fe_id: Random.id(),
+                            type:'questionInput',
+                            title:'输入框1',
+                            props: {
+                                title: '输入姓名',
+                                placeholder:'请输入。。。'
+                            }
+                        },
+                        // Input
+                        {
+                            fe_id: Random.id(),
+                            type:'questionInput',
+                            title:'输入框2',
+                            props: {
+                                title: 'telephone',
+                                placeholder:'请输入电话号码。。。'
+                            }
+                        }
+                    ]
                 }
             }
         }
