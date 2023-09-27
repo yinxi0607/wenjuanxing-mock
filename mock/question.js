@@ -15,11 +15,26 @@ module.exports = [
                     title: Random.ctitle(10, 20),
                     //组件列表
                     componentList: [
+                        // info
+                        {
+                            fe_id: Random.id(),
+                            type: 'questionInfo', // 组件类型，不能重复，前后端统一好的
+                            title: '问卷标题1',
+                            isHidden:false,
+                            isLocked: false,
+                            props: {
+                                title:'个人兴趣调查',
+                                desc: '调查个人兴趣',
+                            }
+                        },
+
                         // Title
                         {
                             fe_id: Random.id(),
                             type: 'questionTitle', // 组件类型，不能重复，前后端统一好的
                             title: '标题',
+                            isHidden:false,
+                            isLocked: false,
                             props: {
                                 text:'个人信息调研',
                                 level: 2,
@@ -30,6 +45,8 @@ module.exports = [
                         {
                             fe_id: Random.id(),
                             type:'questionInput',
+                            isHidden:false,
+                            isLocked: false,
                             title:'输入框1',
                             props: {
                                 title: '输入姓名',
@@ -40,10 +57,36 @@ module.exports = [
                         {
                             fe_id: Random.id(),
                             type:'questionInput',
+                            isHidden:false,
+                            isLocked: false,
                             title:'输入框2',
                             props: {
                                 title: 'telephone',
                                 placeholder:'请输入电话号码。。。'
+                            }
+                        },
+                        // Textarea
+                        {
+                            fe_id: Random.id(),
+                            type:'questionTextarea',
+                            isHidden:false,
+                            isLocked: false,
+                            title:'多行输入',
+                            props: {
+                                title: '你的品行',
+                                placeholder:'请输入。。。'
+                            }
+                        },
+                        // Paragraph
+                        {
+                            fe_id: Random.id(),
+                            type:'questionParagraph',
+                            isHidden:false,
+                            isLocked: false,
+                            title:'一个段落',
+                            props: {
+                                text: '一行段落',
+                                isCenter:false
                             }
                         }
                     ]
